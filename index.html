@@ -2,240 +2,264 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="/style.css" />
-    <div>
-        <h1 class="app-title">My Skills</h1>
-    </div>
-    <title>My Skills</title>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+
+  <title>My Skills</title>
 </head>
 
 <body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-    <script src="script.js"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-    <div style="padding: 2em; border: 2em; width: 90%;">
-        <div>
-            <label for="java18" class="form-label">Java 1.8</label>
-            <input type="range" class="form-range" id="java18" max="100" min="0">
-        </div>
-        <div>
-            <label for="java18" class="form-label">Spring Boot</label>
-            <input type="range" class="form-range" id="springboot" max="100" min="0">
-        </div>
-        <div>
-            <label for="java18" class="form-label">Spring Rest services</label>
-            <input type="range" class="form-range" id="springRestServices" max="100" min="0">
-        </div>
-        <div>
-            <label for="java18" class="form-label">Junit</label>
-            <input type="range" class="form-range" id="junit" max="100" min="0">
-        </div>
-        <div>
-            <label for="java18" class="form-label">AsserJ</label>
-            <input type="range" class="form-range" id="assertJ" max="100" min="0">
-        </div>
-        <div>
-            <label for="java18" class="form-label">Mockito</label>
-            <input type="range" class="form-range" id="mockito" max="100" min="0">
-        </div>
-        <div>
-            <label for="java18" class="form-label">Spring Test</label>
-            <input type="range" class="form-range" id="springTest" max="100" min="0">
-        </div>
-        <div>
-            <label for="java18" class="form-label">Db in Ram H2</label>
-            <input type="range" class="form-range" id="dbInRamH2" max="100" min="0">
-        </div>
-        <div>
-            <label for="java18" class="form-label">Clean Code</label>
-            <input type="range" class="form-range" id="cleanCode" max="100" min="0">
-        </div>
-        <div>
-            <label for="java18" class="form-label">TDD (Test Driven Development)</label>
-            <input type="range" class="form-range" id="tdd" max="100" min="0">
-        </div>
-        <div>
-            <label for="java18" class="form-label">Git</label>
-            <input type="range" class="form-range" id="git" max="100" min="0">
-        </div>
-        <div>
-            <label for="java18" class="form-label">Maven</label>
-            <input type="range" class="form-range" id="maven" max="100" min="0">
-        </div>
-        <div>
-            <label for="java18" class="form-label">Lombok</label>
-            <input type="range" class="form-range" id="lombok" max="100" min="0">
-        </div>
+
+  <div class="container">
+    <h1 class="app-title">My Skills</h1>
+
+    <div>
+      <p class="range-field">
+        <label for="java18" class="form-label">Java 1.8</label>
+        <input type="range" class="form-range" id="java18" max="100" min="0">
+      </p>
     </div>
     <div>
-        <button type="submit" onclick="postLivelli()">Salva</button>
+      <label for="java18" class="form-label">Spring Boot</label>
+      <input type="range" class="form-range" id="springboot" max="100" min="0">
     </div>
+    <div>
+      <label for="java18" class="form-label">Spring Rest services</label>
+      <input type="range" class="form-range" id="springRestServices" max="100" min="0">
+    </div>
+    <div>
+      <label for="java18" class="form-label">Junit</label>
+      <input type="range" class="form-range" id="junit" max="100" min="0">
+    </div>
+    <div>
+      <label for="java18" class="form-label">AsserJ</label>
+      <input type="range" class="form-range" id="assertJ" max="100" min="0">
+    </div>
+    <div>
+      <label for="java18" class="form-label">Mockito</label>
+      <input type="range" class="form-range" id="mockito" max="100" min="0">
+    </div>
+    <div>
+      <label for="java18" class="form-label">Spring Test</label>
+      <input type="range" class="form-range" id="springTest" max="100" min="0">
+    </div>
+    <div>
+      <label for="java18" class="form-label">Db in Ram H2</label>
+      <input type="range" class="form-range" id="dbInRamH2" max="100" min="0">
+    </div>
+    <div>
+      <label for="java18" class="form-label">Clean Code</label>
+      <input type="range" class="form-range" id="cleanCode" max="100" min="0">
+    </div>
+    <div>
+      <label for="java18" class="form-label">TDD (Test Driven Development)</label>
+      <input type="range" class="form-range" id="tdd" max="100" min="0">
+    </div>
+    <div>
+      <label for="java18" class="form-label">Git</label>
+      <input type="range" class="form-range" id="git" max="100" min="0">
+    </div>
+    <div>
+      <label for="java18" class="form-label">Maven</label>
+      <input type="range" class="form-range" id="maven" max="100" min="0">
+    </div>
+    <div>
+      <label for="java18" class="form-label">Lombok</label>
+      <input type="range" class="form-range" id="lombok" max="100" min="0">
+    </div>
+  </div>
+  <div style="padding: 2em; border: 2em; width: 90%;" class="container d-grid ">
+    <button type="button" class="waves-effect waves-light btn" onclick="postLivelli()"><i class="material-icons left">save</i>Aggiorna livelli</button>
+  </div>
+
+
 
 </body>
 
 </html>
 <script>
-    $(document).ready(function () {
+  $(document).ready(function () {
 
-        function getLivelli() {
-            $.ajax({
-                type: "GET",
-                url: "https://myskills-2aa34-default-rtdb.europe-west1.firebasedatabase.app/myskills.json",
-                dataType: "json",
-                success: function (result, status, xhr) {
+    //     toastr.options = {
+    //   "closeButton": false,
+    //   "debug": false,
+    //   "newestOnTop": false,
+    //   "progressBar": true,
+    //   "positionClass": "toast-top-right",
+    //   "preventDuplicates": false,
+    //   "onclick": null,
+    //   "showDuration": "200",
+    //   "hideDuration": "800",
+    //   "timeOut": "3000",
+    //   "extendedTimeOut": "1000",
+    //   "showEasing": "swing",
+    //   "hideEasing": "linear",
+    //   "showMethod": "fadeIn",
+    //   "hideMethod": "fadeOut"
+    // }
 
-                    for (var comp in result) {
+    function getLivelli() {
+      $.ajax({
+        type: "GET",
+        url: "https://myskills-2aa34-default-rtdb.europe-west1.firebasedatabase.app/myskills.json",
+        dataType: "json",
+        success: function (result, status, xhr) {
 
-                        switch (result[comp].nome) {
-                            case "java18":
-                                $('#java18').val(result[comp].livello);
-                                break;
+          for (var comp in result) {
 
-                            case "springboot":
-                                $('#springboot').val(result[comp].livello);
-                                break;
+            switch (result[comp].nome) {
+              case "java18":
+                $('#java18').val(result[comp].livello);
+                break;
 
-                            case "springRestServices":
-                                $('#springRestServices').val(result[comp].livello);
-                                break;
+              case "springboot":
+                $('#springboot').val(result[comp].livello);
+                break;
 
-                            case "junit":
-                                $('#junit').val(result[comp].livello);
-                                break;
+              case "springRestServices":
+                $('#springRestServices').val(result[comp].livello);
+                break;
 
-                            case "assertJ":
-                                $('#assertJ').val(result[comp].livello);
-                                break;
+              case "junit":
+                $('#junit').val(result[comp].livello);
+                break;
 
-                            case "mockito":
-                                $('#mockito').val(result[comp].livello);
-                                break;
+              case "assertJ":
+                $('#assertJ').val(result[comp].livello);
+                break;
 
-                            case "springTest":
-                                $('#springTest').val(result[comp].livello);
-                                break;
+              case "mockito":
+                $('#mockito').val(result[comp].livello);
+                break;
 
-                            case "dbInRamH2":
-                                $('#dbInRamH2').val(result[comp].livello);
-                                break;
+              case "springTest":
+                $('#springTest').val(result[comp].livello);
+                break;
 
-                            case "cleanCode":
-                                $('#cleanCode').val(result[comp].livello);
-                                break;
+              case "dbInRamH2":
+                $('#dbInRamH2').val(result[comp].livello);
+                break;
 
-                            case "tdd":
-                                $('#tdd').val(result[comp].livello);
-                                break;
+              case "cleanCode":
+                $('#cleanCode').val(result[comp].livello);
+                break;
 
-                            case "git":
-                                $('#git').val(result[comp].livello);
-                                break;
+              case "tdd":
+                $('#tdd').val(result[comp].livello);
+                break;
 
-                            case "maven":
-                                $('#maven').val(result[comp].livello);
-                                break;
+              case "git":
+                $('#git').val(result[comp].livello);
+                break;
 
-                            case "lombok":
-                                $('#lombok').val(result[comp].livello);
-                                break;
+              case "maven":
+                $('#maven').val(result[comp].livello);
+                break;
 
-                            default:
-                                break;
-                        }
+              case "lombok":
+                $('#lombok').val(result[comp].livello);
+                break;
 
-                    }
-                },
-                error: function (xhr, status, error) {
-                    alert("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
-                }
-            })
+              default:
+                break;
+            }
+
+          }
+        },
+        error: function (xhr, status, error) {
+          alert("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
         }
-
-
-        getLivelli();
-    });
-
-    function postLivelli() {
-
-        var param = [
-            {
-                "nome": "java18",
-                "livello": $('#java18').val()
-            },
-            {
-                "nome": "springboot",
-                "livello": $('#springboot').val()
-            },
-            {
-                "nome": "springRestServices",
-                "livello": $('#springRestServices').val()
-            },
-            {
-                "nome": "junit",
-                "livello": $('#junit').val()
-            },
-            {
-                "nome": "assertJ",
-                "livello": $('#assertJ').val()
-            },
-            {
-                "nome": "mockito",
-                "livello": $('#mockito').val()
-            },
-            {
-                "nome": "springTest",
-                "livello": $('#springTest').val()
-            },
-            {
-                "nome": "dbInRamH2",
-                "livello": $('#dbInRamH2').val()
-            },
-            {
-                "nome": "cleanCode",
-                "livello": $('#cleanCode').val()
-            },
-            {
-                "nome": "tdd",
-                "livello": $('#tdd').val()
-            },
-            {
-                "nome": "git",
-                "livello": $('#git').val()
-            },
-            {
-                "nome": "maven",
-                "livello": $('#maven').val()
-            },
-            {
-                "nome": "lombok",
-                "livello": $('#lombok').val()
-            }
-        ]
-
-        $.ajax({
-            type: "PUT",
-            url: "https://myskills-2aa34-default-rtdb.europe-west1.firebasedatabase.app/myskills.json",
-            dataType: "json",
-            data:JSON.stringify (param),
-            success: function (result, status, xhr) {
-                alert("Modifiche Salvate");
-            },
-            error: function (xhr, status, error) {
-                alert("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
-            }
-        })
+      })
     }
+
+
+    getLivelli();
+  });
+
+  function postLivelli() {
+
+    var param = [
+      {
+        "nome": "java18",
+        "livello": $('#java18').val()
+      },
+      {
+        "nome": "springboot",
+        "livello": $('#springboot').val()
+      },
+      {
+        "nome": "springRestServices",
+        "livello": $('#springRestServices').val()
+      },
+      {
+        "nome": "junit",
+        "livello": $('#junit').val()
+      },
+      {
+        "nome": "assertJ",
+        "livello": $('#assertJ').val()
+      },
+      {
+        "nome": "mockito",
+        "livello": $('#mockito').val()
+      },
+      {
+        "nome": "springTest",
+        "livello": $('#springTest').val()
+      },
+      {
+        "nome": "dbInRamH2",
+        "livello": $('#dbInRamH2').val()
+      },
+      {
+        "nome": "cleanCode",
+        "livello": $('#cleanCode').val()
+      },
+      {
+        "nome": "tdd",
+        "livello": $('#tdd').val()
+      },
+      {
+        "nome": "git",
+        "livello": $('#git').val()
+      },
+      {
+        "nome": "maven",
+        "livello": $('#maven').val()
+      },
+      {
+        "nome": "lombok",
+        "livello": $('#lombok').val()
+      }
+    ]
+
+    $.ajax({
+      type: "PUT",
+      url: "https://myskills-2aa34-default-rtdb.europe-west1.firebasedatabase.app/myskills.json",
+      dataType: "json",
+      data: JSON.stringify(param),
+      success: function (result, status, xhr) {
+        M.toast({html: 'Modifiche Salvate con successo!'})
+        // alert("Modifiche Salvate");
+      },
+      error: function (xhr, status, error) {
+        alert("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+      }
+    })
+  }
 
 </script>
