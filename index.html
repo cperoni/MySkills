@@ -21,9 +21,6 @@
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-
-
-
   <div class="container">
     <h1 class="app-title">My Skills</h1>
 
@@ -82,8 +79,12 @@
       <input type="range" class="form-range" id="lombok" max="100" min="0">
     </div>
   </div>
-  <div style="padding: 2em; border: 2em; width: 90%;" class="container d-grid ">
-    <button type="button" class="waves-effect waves-light btn" onclick="postLivelli()"><i class="material-icons left">save</i>Aggiorna livelli</button>
+  <div class="container">
+    <div class="row">
+      
+        <button type="button" class="waves-effect waves-light btn" onclick="postLivelli()" style="float:right"><i
+            class="material-icons left">save</i>Aggiorna livelli</button>
+    </div>
   </div>
 
 
@@ -253,7 +254,7 @@
       dataType: "json",
       data: JSON.stringify(param),
       success: function (result, status, xhr) {
-        M.toast({html: 'Modifiche Salvate con successo!'})
+        M.toast({ html: 'Modifiche Salvate con successo!' })
         // alert("Modifiche Salvate");
       },
       error: function (xhr, status, error) {
