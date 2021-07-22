@@ -81,9 +81,9 @@
   </div>
   <div class="container">
     <div class="row">
-      
-        <button type="button" class="waves-effect waves-light btn" onclick="postLivelli()" style="float:right"><i
-            class="material-icons left">save</i>Aggiorna livelli</button>
+
+      <button type="button" class="waves-effect waves-light btn" onclick="postLivelli()" style="float:right"><i
+          class="material-icons left">save</i>Aggiorna livelli</button>
     </div>
   </div>
 
@@ -95,101 +95,84 @@
 <script>
   $(document).ready(function () {
 
-    //     toastr.options = {
-    //   "closeButton": false,
-    //   "debug": false,
-    //   "newestOnTop": false,
-    //   "progressBar": true,
-    //   "positionClass": "toast-top-right",
-    //   "preventDuplicates": false,
-    //   "onclick": null,
-    //   "showDuration": "200",
-    //   "hideDuration": "800",
-    //   "timeOut": "3000",
-    //   "extendedTimeOut": "1000",
-    //   "showEasing": "swing",
-    //   "hideEasing": "linear",
-    //   "showMethod": "fadeIn",
-    //   "hideMethod": "fadeOut"
-    // }
-
-    function getLivelli() {
-      $.ajax({
-        type: "GET",
-        url: "https://myskills-2aa34-default-rtdb.europe-west1.firebasedatabase.app/myskills.json",
-        dataType: "json",
-        success: function (result, status, xhr) {
-
-          for (var comp in result) {
-
-            switch (result[comp].nome) {
-              case "java18":
-                $('#java18').val(result[comp].livello);
-                break;
-
-              case "springboot":
-                $('#springboot').val(result[comp].livello);
-                break;
-
-              case "springRestServices":
-                $('#springRestServices').val(result[comp].livello);
-                break;
-
-              case "junit":
-                $('#junit').val(result[comp].livello);
-                break;
-
-              case "assertJ":
-                $('#assertJ').val(result[comp].livello);
-                break;
-
-              case "mockito":
-                $('#mockito').val(result[comp].livello);
-                break;
-
-              case "springTest":
-                $('#springTest').val(result[comp].livello);
-                break;
-
-              case "dbInRamH2":
-                $('#dbInRamH2').val(result[comp].livello);
-                break;
-
-              case "cleanCode":
-                $('#cleanCode').val(result[comp].livello);
-                break;
-
-              case "tdd":
-                $('#tdd').val(result[comp].livello);
-                break;
-
-              case "git":
-                $('#git').val(result[comp].livello);
-                break;
-
-              case "maven":
-                $('#maven').val(result[comp].livello);
-                break;
-
-              case "lombok":
-                $('#lombok').val(result[comp].livello);
-                break;
-
-              default:
-                break;
-            }
-
-          }
-        },
-        error: function (xhr, status, error) {
-          alert("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
-        }
-      })
-    }
-
-
     getLivelli();
+
   });
+
+  function getLivelli() {
+    $.ajax({
+      type: "GET",
+      url: "https://myskills-2aa34-default-rtdb.europe-west1.firebasedatabase.app/myskills.json",
+      dataType: "json",
+      success: function (result, status, xhr) {
+
+        for (var comp in result) {
+
+          switch (result[comp].nome) {
+            case "java18":
+              $('#java18').val(result[comp].livello);
+              break;
+
+            case "springboot":
+              $('#springboot').val(result[comp].livello);
+              break;
+
+            case "springRestServices":
+              $('#springRestServices').val(result[comp].livello);
+              break;
+
+            case "junit":
+              $('#junit').val(result[comp].livello);
+              break;
+
+            case "assertJ":
+              $('#assertJ').val(result[comp].livello);
+              break;
+
+            case "mockito":
+              $('#mockito').val(result[comp].livello);
+              break;
+
+            case "springTest":
+              $('#springTest').val(result[comp].livello);
+              break;
+
+            case "dbInRamH2":
+              $('#dbInRamH2').val(result[comp].livello);
+              break;
+
+            case "cleanCode":
+              $('#cleanCode').val(result[comp].livello);
+              break;
+
+            case "tdd":
+              $('#tdd').val(result[comp].livello);
+              break;
+
+            case "git":
+              $('#git').val(result[comp].livello);
+              break;
+
+            case "maven":
+              $('#maven').val(result[comp].livello);
+              break;
+
+            case "lombok":
+              $('#lombok').val(result[comp].livello);
+              break;
+
+            default:
+              break;
+          }
+
+        }
+      },
+      error: function (xhr, status, error) {
+        alert("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+      }
+    })
+  }
+
 
   function postLivelli() {
 
@@ -255,12 +238,11 @@
       data: JSON.stringify(param),
       success: function (result, status, xhr) {
         M.toast({ html: 'Modifiche Salvate con successo!' })
-        // alert("Modifiche Salvate");
+        getLivelli();
       },
       error: function (xhr, status, error) {
         alert("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
       }
     })
   }
-
 </script>
