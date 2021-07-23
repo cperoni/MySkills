@@ -21,63 +21,8 @@
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-  <div class="container">
+  <div id="mainContainer" class="container">
     <h1 class="app-title">My Skills</h1>
-
-    <div>
-      <p class="range-field">
-        <label for="java18" class="form-label">Java 1.8</label>
-        <input type="range" class="form-range" id="java18" max="100" min="0">
-      </p>
-    </div>
-    <div>
-      <label for="java18" class="form-label">Spring Boot</label>
-      <input type="range" class="form-range" id="springboot" max="100" min="0">
-    </div>
-    <div>
-      <label for="java18" class="form-label">Spring Rest services</label>
-      <input type="range" class="form-range" id="springRestServices" max="100" min="0">
-    </div>
-    <div>
-      <label for="java18" class="form-label">Junit</label>
-      <input type="range" class="form-range" id="junit" max="100" min="0">
-    </div>
-    <div>
-      <label for="java18" class="form-label">AsserJ</label>
-      <input type="range" class="form-range" id="assertJ" max="100" min="0">
-    </div>
-    <div>
-      <label for="java18" class="form-label">Mockito</label>
-      <input type="range" class="form-range" id="mockito" max="100" min="0">
-    </div>
-    <div>
-      <label for="java18" class="form-label">Spring Test</label>
-      <input type="range" class="form-range" id="springTest" max="100" min="0">
-    </div>
-    <div>
-      <label for="java18" class="form-label">Db in Ram H2</label>
-      <input type="range" class="form-range" id="dbInRamH2" max="100" min="0">
-    </div>
-    <div>
-      <label for="java18" class="form-label">Clean Code</label>
-      <input type="range" class="form-range" id="cleanCode" max="100" min="0">
-    </div>
-    <div>
-      <label for="java18" class="form-label">TDD (Test Driven Development)</label>
-      <input type="range" class="form-range" id="tdd" max="100" min="0">
-    </div>
-    <div>
-      <label for="java18" class="form-label">Git</label>
-      <input type="range" class="form-range" id="git" max="100" min="0">
-    </div>
-    <div>
-      <label for="java18" class="form-label">Maven</label>
-      <input type="range" class="form-range" id="maven" max="100" min="0">
-    </div>
-    <div>
-      <label for="java18" class="form-label">Lombok</label>
-      <input type="range" class="form-range" id="lombok" max="100" min="0">
-    </div>
   </div>
   <div class="container">
     <div class="row">
@@ -106,65 +51,18 @@
       dataType: "json",
       success: function (result, status, xhr) {
 
+        $('#mainContainer').html("");
+
         for (var comp in result) {
-
-          switch (result[comp].nome) {
-            case "java18":
-              $('#java18').val(result[comp].livello);
-              break;
-
-            case "springboot":
-              $('#springboot').val(result[comp].livello);
-              break;
-
-            case "springRestServices":
-              $('#springRestServices').val(result[comp].livello);
-              break;
-
-            case "junit":
-              $('#junit').val(result[comp].livello);
-              break;
-
-            case "assertJ":
-              $('#assertJ').val(result[comp].livello);
-              break;
-
-            case "mockito":
-              $('#mockito').val(result[comp].livello);
-              break;
-
-            case "springTest":
-              $('#springTest').val(result[comp].livello);
-              break;
-
-            case "dbInRamH2":
-              $('#dbInRamH2').val(result[comp].livello);
-              break;
-
-            case "cleanCode":
-              $('#cleanCode').val(result[comp].livello);
-              break;
-
-            case "tdd":
-              $('#tdd').val(result[comp].livello);
-              break;
-
-            case "git":
-              $('#git').val(result[comp].livello);
-              break;
-
-            case "maven":
-              $('#maven').val(result[comp].livello);
-              break;
-
-            case "lombok":
-              $('#lombok').val(result[comp].livello);
-              break;
-
-            default:
-              break;
-          }
-
+          $('#mainContainer').append('<div><p class="range-field"><label for="'
+            + result[comp].nome
+            + '" class="form-label">'
+            + result[comp].label
+            + '</label> <input type="range" class="form-range" id="'
+            + result[comp].nome
+            + '" max="100" min="0" value="'
+            + result[comp].livello
+            + '""></p></div>');
         }
       },
       error: function (xhr, status, error) {
@@ -179,55 +77,68 @@
     var param = [
       {
         "nome": "java18",
-        "livello": $('#java18').val()
+        "livello": $('#java18').val(),
+        "label":"Java 1.8"
       },
       {
         "nome": "springboot",
-        "livello": $('#springboot').val()
+        "livello": $('#springboot').val(),
+        "label":"Spring Boot"
       },
       {
         "nome": "springRestServices",
-        "livello": $('#springRestServices').val()
+        "livello": $('#springRestServices').val(),
+        "label":"spring Rest Services"
       },
       {
         "nome": "junit",
-        "livello": $('#junit').val()
+        "livello": $('#junit').val(),
+        "label":"Junit"
       },
       {
         "nome": "assertJ",
-        "livello": $('#assertJ').val()
+        "livello": $('#assertJ').val(),
+        "label":"AssertJ"
       },
       {
         "nome": "mockito",
-        "livello": $('#mockito').val()
+        "livello": $('#mockito').val(),
+        "label":"Mokito"
       },
       {
         "nome": "springTest",
-        "livello": $('#springTest').val()
+        "livello": $('#springTest').val(),
+        "label":"Spring Test"
       },
       {
         "nome": "dbInRamH2",
-        "livello": $('#dbInRamH2').val()
+        "livello": $('#dbInRamH2').val(),
+        "label":"Db in Ram H2"
       },
       {
         "nome": "cleanCode",
-        "livello": $('#cleanCode').val()
+        "livello": $('#cleanCode').val(),
+        "label":"Clean Code"
       },
       {
         "nome": "tdd",
-        "livello": $('#tdd').val()
+        "livello": $('#tdd').val(),
+        "label":"TDD (Test Driven Development)"
       },
       {
         "nome": "git",
-        "livello": $('#git').val()
+        "livello": $('#git').val(),
+        "label":"Git"
       },
       {
         "nome": "maven",
-        "livello": $('#maven').val()
+        "livello": $('#maven').val(),
+        "label":"Maven"
       },
       {
         "nome": "lombok",
-        "livello": $('#lombok').val()
+        "livello": $('#lombok').val(),
+        "label":"Lombok"
       }
     ]
 
