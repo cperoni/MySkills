@@ -48,7 +48,7 @@
       dataType: "json",
       success: function (result, status, xhr) {
 
-        $('#mainContainer').html("");
+        $('#mainContainer').html('<h1 class="app-title">My Skills</h1>');
 
         for (var comp in result) {
           $('#mainContainer').append('<div><p class="range-field"><label for="'
