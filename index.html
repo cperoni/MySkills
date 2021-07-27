@@ -17,6 +17,66 @@
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
+  <script>
+    $(function () {
+      getLivelli();
+    });
+
+    function getLivelli() {
+      $.ajax({
+        type: "GET",
+        url: "https://myskills-2aa34-default-rtdb.europe-west1.firebasedatabase.app/myskills.json",
+        dataType: "json",
+        success: function (result, status, xhr) {
+
+          $('#mainContainer').html('');
+
+          for (var comp in result) {
+            $('#mainContainer').append('<div><p class="range-field"><label for="'
+              + result[comp].nome
+              + '" class="form-label">'
+              + result[comp].label
+              + '</label> <input type="range" class="form-range" id="'
+              + result[comp].nome
+              + '" max="100" min="0" value="'
+              + result[comp].livello
+              + '""></p></div>');
+          }
+        },
+        error: function (xhr, status, error) {
+          alert("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+        }
+      })
+    }
+
+    function postLivelli() {
+
+      var params = [];
+
+      $("p.range-field").each(function () {
+        params.push({
+          "nome": $(this.children[1]).attr('id'),
+          "livello": $(this.children[1]).val(),
+          "label": $(this.children[0]).text()
+        });
+      });
+
+      $.ajax({
+        type: "PUT",
+        url: "https://myskills-2aa34-default-rtdb.europe-west1.firebasedatabase.app/myskills.json",
+        dataType: "json",
+        data: JSON.stringify(params),
+        success: function (result, status, xhr) {
+          M.toast({ html: 'Modifiche Salvate con successo!' })
+          getLivelli();
+        },
+        error: function (xhr, status, error) {
+          alert("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+        }
+      })
+    }
+  </script>
+
   <title>My Skills</title>
 </head>
 
@@ -25,8 +85,8 @@
     <h1 class="app-title">My Skills</h1>
   </header>
 
-    <div id="mainContainer" class="container">
-    </div>
+  <div id="mainContainer" class="container">
+  </div>
 
   <div class="container">
     <div class="row">
@@ -37,123 +97,3 @@
 </body>
 
 </html>
-<script>
-  $(document).ready(function () {
-
-    getLivelli();
-
-  });
-
-  function getLivelli() {
-    $.ajax({
-      type: "GET",
-      url: "https://myskills-2aa34-default-rtdb.europe-west1.firebasedatabase.app/myskills.json",
-      dataType: "json",
-      success: function (result, status, xhr) {
-
-        $('#mainContainer').html('');
-
-        for (var comp in result) {
-          $('#mainContainer').append('<div><p class="range-field"><label for="'
-            + result[comp].nome
-            + '" class="form-label">'
-            + result[comp].label
-            + '</label> <input type="range" class="form-range" id="'
-            + result[comp].nome
-            + '" max="100" min="0" value="'
-            + result[comp].livello
-            + '""></p></div>');
-        }
-      },
-      error: function (xhr, status, error) {
-        alert("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
-      }
-    })
-  }
-
-
-  function postLivelli() {
-
-    var param = [
-      {
-        "nome": "java18",
-        "livello": $('#java18').val(),
-        "label": "Java 1.8"
-      },
-      {
-        "nome": "springboot",
-        "livello": $('#springboot').val(),
-        "label": "Spring Boot"
-      },
-      {
-        "nome": "springRestServices",
-        "livello": $('#springRestServices').val(),
-        "label": "spring Rest Services"
-      },
-      {
-        "nome": "junit",
-        "livello": $('#junit').val(),
-        "label": "Junit"
-      },
-      {
-        "nome": "assertJ",
-        "livello": $('#assertJ').val(),
-        "label": "AssertJ"
-      },
-      {
-        "nome": "mockito",
-        "livello": $('#mockito').val(),
-        "label": "Mokito"
-      },
-      {
-        "nome": "springTest",
-        "livello": $('#springTest').val(),
-        "label": "Spring Test"
-      },
-      {
-        "nome": "dbInRamH2",
-        "livello": $('#dbInRamH2').val(),
-        "label": "Db in Ram H2"
-      },
-      {
-        "nome": "cleanCode",
-        "livello": $('#cleanCode').val(),
-        "label": "Clean Code"
-      },
-      {
-        "nome": "tdd",
-        "livello": $('#tdd').val(),
-        "label": "TDD (Test Driven Development)"
-      },
-      {
-        "nome": "git",
-        "livello": $('#git').val(),
-        "label": "Git"
-      },
-      {
-        "nome": "maven",
-        "livello": $('#maven').val(),
-        "label": "Maven"
-      },
-      {
-        "nome": "lombok",
-        "livello": $('#lombok').val(),
-        "label": "Lombok"
-      }
-    ]
-
-    $.ajax({
-      type: "PUT",
-      url: "https://myskills-2aa34-default-rtdb.europe-west1.firebasedatabase.app/myskills.json",
-      dataType: "json",
-      data: JSON.stringify(param),
-      success: function (result, status, xhr) {
-        M.toast({ html: 'Modifiche Salvate con successo!' })
-        getLivelli();
-      },
-      error: function (xhr, status, error) {
-        alert("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
-      }
-    })
-  }
-</script>
